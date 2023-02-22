@@ -1,0 +1,45 @@
+
+{% extends "main/index.html" %}
+{% load static %}
+
+{% block title %} HOME PAGE {% endblock %}
+
+{% block content %}
+
+<!-- Navbar -->
+
+<!-- Navbar -->
+
+<main class="mt-5 pt-4">
+  <div class="container">
+   <form>
+     <h2 class="my-5 text-center">Login</h2>
+     <div class="row">
+       <div class="col-md-12 mb-4">
+         <div class="card p-4">
+           <div class="row mb-3">
+             <div class="col-md-6 offset-3 mb-2">
+               <div class="form-outline">
+                 <input type="text" id="typeText" class="form-control" />
+                 <label class="form-label" for="typeText">E-Mail</label>
+               </div>
+             </div>
+             <div class="col-md-6 offset-3 mb-2">
+               <div class="form-outline">
+                 <input type="text" id="typeText1" class="form-control" />
+                 <label class="form-label" for="typeText1">Password</label>
+               </div>
+             </div>
+           </div>
+           <hr class="mb-4" />
+           <button class="btn btn-primary w-25 m-auto" type="button">Login</button>
+         </div>
+       </div>
+     </div>
+   </form>
+  </div>
+</main>
+
+<!-- footer -->
+
+{% endblock %}
