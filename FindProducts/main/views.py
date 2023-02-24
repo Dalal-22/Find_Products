@@ -14,3 +14,22 @@ def product (request :HttpRequest):
 
     return render(request ,'main/product.html')
 
+
+def payment (request :HttpRequest):
+
+    return render(request ,'main/payment.html')
+
+def order (request :HttpRequest):
+
+    return render(request ,'main/order.html')
+
+def order_summary(request :HttpRequest):
+
+    return render(request ,'main/order_summary.html')
+
+
+
+
+
+
+

@@ -1,82 +1,114 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
- 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Material Design for Bootstrap</title>
-    <!-- MDB icon -->
-    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <!-- Google Fonts Roboto -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
-    />
-    <!-- MDB -->
-    <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}" />
-  </head>
-  <body>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
-      <div class="container">
-          <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
-              <i class="fas fa-bars"></i>
-          </button>
-          <!-- Collapsible wrapper -->
-          <div class="collapse navbar-collapse" id="navbarSupportedContent1">
-              <!-- Navbar brand -->
-              <a class="navbar-brand mt-2 mt-sm-0" href="https://mdbootstrap.com/">
-                  <img src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp" height="20" alt="MDB Logo" loading="lazy"/>
-              </a>
-              <!-- Left links -->
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item active">
-                      <a class="nav-link " href="{% url 'main:home' %}">Home</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="{% url 'main:product' %}">Products</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="{% url 'account:login' %}">Login</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="{% url 'account:register' %}">Register</a>
-                  </li>
-              </ul>
-          </div>
-          <div class="d-flex align-items-center">
-              <a class="nav-link me-3" href="#"><i class="fas fa-shopping-cart"></i><span class="badge rounded-pill badge-notification bg-danger">2</span></a>
-              <a href="#" class="border rounded px-2 nav-link" target="_blank"><i class="fa fa-user me-2"></i> Welcome : Guest</a>
-          </div>
-      </div>
-  </nav>
-  <!-- Navbar -->
-    {% block content %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/mdb.min.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+    <style type="text/css">
+        html,
+        body,
+        header,
+        .carousel {
+            height: 60vh;
+        }
 
-    {% endblock %}
-    
-<footer class="text-center text-white mt-4" style="background-color: #607D8B">
+        @media (max-width: 740px) {
 
-  <!--Call to action-->
+            html,
+            body,
+            header,
+            .carousel {
+                height: 100vh;
+            }
+        }
+
+        @media (min-width: 800px) and (max-width: 850px) {
+
+            html,
+            body,
+            header,
+            .carousel {
+                height: 100vh;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+    <div class="container">
+
+        <!-- Brand -->
+        <a class="navbar-brand waves-effect" href="/">
+            <img src="{% static 'img/logo.png' %}"     height="61px">
+            <strong class="title">Dalal</strong>
+        </a>
+        <ul class="navbar-nav me-auto ml-5 mb-2 mb-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link " href="{% url 'main:home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'main:product' %}">Products</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'account:login' %}">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'account:register' %}">Register</a>
+            </li>
+        </ul>
+        <!-- Collapse -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
+<div class="mt-5 pt-4">
+
+</div>
+<main>
   
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); text-color: #E0E0E0">
-      © 2022 Copyright:
-      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-  </div>
-  <!-- Copyright -->
-</footer>
-    <!-- End your project here-->
+  
+<!-- Navbar -->
+  {% block content %}
 
-    <!-- MDB -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
-    <!-- Custom scripts -->
-    <script type="text/javascript"></script>
+  {% endblock %}
+  
+  <footer class="page-footer text-center font-small mt-4 wow fadeIn">
+    <!--Copyright-->
+    <div class="footer-copyright py-3">
+        <!--      © 2023 Copyright:-->
+        <!--      <a href="#" target="_blank">Develop By : Dalal Mohammed</a>-->
+    </div>
+    <!--/.Copyright-->
+
+
+
+
+  
+  </footer>
+  
+  
+  <script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script>
+  <!-- Initializations -->
+  <script type="text/javascript">
+      // Animations initialization
+      new WOW().init();
+  
+  </script>
   </body>
-</html>
+  </html>
+  
