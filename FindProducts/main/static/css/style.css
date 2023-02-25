@@ -49,3 +49,9 @@ footer.page-footer .footer-copyright {
   font-weight: 400;
   font-family: serif;
 }
+.btn-primary {
+  background: #89adea!important;
+}
+.btn-warning {
+  background: #ffdb93 !important;
+}

@@ -7,8 +7,13 @@ urlpatterns = [
     
     path("", views.home, name="home"),
     path("product", views.product, name="product"),
-    path("payment", views.payment, name="payment"),
-    path("payment", views.payment, name="payment"),
+    path("cart", views.cart, name="cart"),
+    path("Nahdi", views.Nahdi, name="Nahdi"),
+    path("dawaa", views.dawaa, name="dawaa"),
+    path("whites", views.whites, name="whites"),
+    path("kunooz", views.kunooz, name="kunooz")
+
+
 
 
 ]

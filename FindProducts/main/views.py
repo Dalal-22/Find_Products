@@ -15,17 +15,26 @@ def product (request :HttpRequest):
     return render(request ,'main/product.html')
 
 
-def payment (request :HttpRequest):
+def cart (request :HttpRequest):
 
-    return render(request ,'main/payment.html')
+    return render(request ,'main/cart.html')
 
-def order (request :HttpRequest):
+def Nahdi (request :HttpRequest):
 
-    return render(request ,'main/order.html')
+    return render(request ,'main/Nahdi.html')
 
-def order_summary(request :HttpRequest):
+def dawaa(request :HttpRequest):
 
-    return render(request ,'main/order_summary.html')
+    return render(request ,'main/dawaa.html')
+
+def whites(request :HttpRequest):
+
+    return render(request ,'main/whites.html')
+
+def kunooz(request :HttpRequest):
+
+    return render(request ,'main/kunooz.html')
+
 
 
 
