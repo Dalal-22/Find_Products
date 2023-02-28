@@ -1,0 +1,58 @@
+/* Required height of parents of the Half Page Carousel for proper displaying carousel itself */
+html,
+body,
+.view {
+  height: 100%; }
+
+/* Half Page Carousel itself*/
+.carousel {
+  height: 50%; }
+  .carousel .carousel-inner {
+    height: 100%; }
+    .carousel .carousel-inner .carousel-item,
+    .carousel .carousel-inner .active {
+      height: 100%; }
+
+/* Adjustment for mobile devices*/
+@media (max-width: 776px) {
+  .carousel {
+    height: 100%; } }
+
+/* Footer color for sake of consistency with Navbar */
+.page-footer {
+  background-color: #929FBA; }
+.navbar {
+  background: #fff1b6 !important;
+  padding: 11px !important;
+}
+.mdb-color.lighten-3 {
+  background-color: #988680e6 !important;
+
+}
+.imageContent {
+  border-radius: 45px;
+  padding: 10px;
+  height: 200px !important;
+  width: 200px !important;
+}
+footer.page-footer .footer-copyright {
+  background: #fff1b6 !important;
+}
+.content p {
+  font-size: 31px ;
+  font-weight: bold ;
+  font-family: ui-serif ;
+  color: #795548 ;
+}
+.nav-item a, .title,.navbar-brand  {
+  font-size: 23px;
+  font-weight: 400;
+  font-family: serif;
+}
+.btn-primary {
+  background: #89adea!important;
+}
+.btn-warning {
+  background: #ffdb93 !important;
+}
+
