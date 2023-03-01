@@ -1,13 +1,12 @@
 import random
 import string
-
 import stripe
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import ObjectDoesNotExist
-from django.shortcuts import redirect
+from django.shortcuts import redirect,render
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 from django.views.generic import ListView, DetailView, View
@@ -209,6 +208,7 @@ class CheckoutView(View):
 class PaymentView(View):
     def get(self, *args, **kwargs):
         order = Order.objects.get(user=self.request.user, ordered=False)
+        
         if order.billing_address:
             context = {
                 'order': order,
@@ -517,3 +517,40 @@ class RequestRefundView(View):
             except ObjectDoesNotExist:
                 messages.info(self.request, "This order does not exist.")
                 return redirect("core:request-refund")
+
+
+class SearchResultsView1(ListView):
+    model = Item
+    template_name = 'Nahdi.html'
+
+    def get_queryset(self):  # new
+            query = self.request.GET.get("q")
+            object_list = Item.objects.filter(category=query)
+            return object_list
+
+class SearchResultsView2(ListView):
+    model = Item
+    template_name = 'Al-dawaa.html'
+
+    def get_queryset(self):  # new
+            query = self.request.GET.get("q")
+            object_list = Item.objects.filter(category=query)
+            return object_list
+
+class SearchResultsView3(ListView):
+    model = Item
+    template_name = 'Whites.html'
+
+    def get_queryset(self):  # new
+            query = self.request.GET.get("q")
+            object_list = Item.objects.filter(category=query)
+            return object_list
+
+class SearchResultsView4(ListView):
+    model = Item
+    template_name = 'Kunooz.html'
+
+    def get_queryset(self):  # new
+            query = self.request.GET.get("q")
+            object_list = Item.objects.filter(category=query)
+            return object_list

@@ -56,16 +56,16 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Nahdi</a>
+              <a class="nav-link" href="{% url 'core:products_by_pharmacy_1' %}?q=N">Nahdi</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Al-dawaa</a>
+              <a class="nav-link" href="{% url 'core:products_by_pharmacy_2' %}?q=D">Al-dawaa</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Whites</a>
+              <a class="nav-link" href="{% url 'core:products_by_pharmacy_3' %}?q=W">Whites</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Kunooz</a>
+              <a class="nav-link" href="{% url 'core:products_by_pharmacy_4' %}?q=K">Kunooz</a>
             </li>
 
           </ul>
@@ -73,7 +73,7 @@
 
           <form class="form-inline">
             <div class="md-form my-0">
-              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+              <input onkeyup="myFunction()" id="myInput" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
             </div>
           </form>
         </div>
@@ -82,33 +82,29 @@
       </nav>
       <!--/.Navbar-->
 
-      <!--Section: Products v.3-->
       <section class="text-center mb-4">
 
-        <div class="row wow fadeIn">
+        <div class="row wow fadeIn" id="MainClass">
 
           {% for item in object_list %}
-          <div class="col-lg-3 col-md-6 mb-4">
+          <div class="col-lg-3 col-md-6 mb-4 subClass">
 
             <div class="card">
 
               <div class="view overlay">
                 {% comment %} <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg" class="card-img-top" {% endcomment %}
-                <img src="{{ item.image.url }}" class="card-img-top">
+                <img style="height: 200px" src="{{ item.image.url }}" class="card-img-top">
                 <a href="{{ item.get_absolute_url }}">
                   <div class="mask rgba-white-slight"></div>
                 </a>
               </div>
 
               <div class="card-body text-center">
-                <a href="" class="grey-text">
-                  <h5>{{ item.get_category_display }}</h5>
-                </a>
+                <a href="" class="grey-text"><h5>{{ item.get_category_display }}</h5></a>
                 <h5>
                   <strong>
-                    <a href="{{ item.get_absolute_url }}" class="dark-grey-text">{{ item.title }}
-                      <span class="badge badge-pill {{ item.get_label_display }}-color">NEW</span>
-                    </a>
+                    <a id="searchrr" href="{{ item.get_absolute_url }}" class="dark-grey-text">{{ item.title }}</a>
+                    <span class="badge badge-pill {{ item.get_label_display }}-color"></span>
                   </strong>
                 </h5>
 
@@ -131,9 +127,7 @@
         </div>
 
       </section>
-      <!--Section: Products v.3-->
 
-      <!--Pagination-->
 
       {% if is_paginated %}
       <nav class="d-flex justify-content-center wow fadeIn">

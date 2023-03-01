@@ -9,7 +9,11 @@ from .views import (
     remove_single_item_from_cart,
     PaymentView,
     AddCouponView,
-    RequestRefundView
+    RequestRefundView,
+    SearchResultsView1,
+    SearchResultsView2,
+    SearchResultsView3,
+    SearchResultsView4,
 )
 
 app_name = 'core'
@@ -22,8 +26,11 @@ urlpatterns = [
     path('add-to-cart/<slug>/', add_to_cart, name='add-to-cart'),
     path('add-coupon/', AddCouponView.as_view(), name='add-coupon'),
     path('remove-from-cart/<slug>/', remove_from_cart, name='remove-from-cart'),
-    path('remove-item-from-cart/<slug>/', remove_single_item_from_cart,
-         name='remove-single-item-from-cart'),
+    path('remove-item-from-cart/<slug>/', remove_single_item_from_cart,name='remove-single-item-from-cart'),
     path('payment/<payment_option>/', PaymentView.as_view(), name='payment'),
+    path('products_by_pharmacy_1/', SearchResultsView1.as_view(), name='products_by_pharmacy_1'),
+    path('products_by_pharmacy_2/', SearchResultsView2.as_view(), name='products_by_pharmacy_2'),
+    path('products_by_pharmacy_3/', SearchResultsView3.as_view(), name='products_by_pharmacy_3'),
+    path('products_by_pharmacy_4/', SearchResultsView4.as_view(), name='products_by_pharmacy_4'),
     path('request-refund/', RequestRefundView.as_view(), name='request-refund')
 ]

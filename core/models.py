@@ -8,7 +8,7 @@ from django_countries.fields import CountryField
 
 CATEGORY_CHOICES = (
     ('N', 'Nahdi'),
-    ('D', 'Al-dawaa'),
+    ('D', 'Dawaa'),
     ('W', 'Whites'),
     ('K', 'Kunooz'),
 )

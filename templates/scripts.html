@@ -1,5 +1,5 @@
 {% load static %}
-  
+
 <script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
 <!-- Bootstrap tooltips -->
 <script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
@@ -9,7 +9,23 @@
 <script type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script>
 <!-- Initializations -->
 <script type="text/javascript">
-  // Animations initialization
-  new WOW().init();
+    // Animations initialization
+    new WOW().init();
 
+    function myFunction() {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("MainClass");
+        li = ul.getElementsByClassName("subClass");
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[2];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    }
 </script>
